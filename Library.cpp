@@ -1,32 +1,102 @@
 #include <iostream>
-
+#include <conio.h>
 using namespace std;
 
-class Person
-{
- private: 
-  char nameLibrarian[20];
-  char nameReferred[20];
- public:
-
-};
+class Chairman
+{};
 class Book
 {};
 class Computer
 {};
-class List
+class bookList
 {};
-class bookNo
+class Math_Shelf_Manager
+{};
+class Programming_Shelf_Manager
+{};
+class Physic_Shelf_Manager
+{};
+class English_Shelf_Manager
+{};
+
+
+
+//*********************************MENU*********************************
+void menu()
 {
- private:
-   char bookNumber[100];
- public:
+	unsigned int marker;        
+    unsigned int choice = 1;
+    do              
+    {
+        system("cls");
+        cout  << "========= Menu ========="  << endl;   
+        if (choice == 1)                   
+            cout << "->" ;  
+        else
+            cout << "  ";
+        cout << "Continue Game" << endl; 
+        if (choice == 2)                    
+            cout << "->" ;   
+        else
+            cout << "  ";
+        cout << "New Game" << endl;
+        if (choice == 3)                   
+            cout << "->" ;  
+        else
+            cout << "  ";
+            
+        cout << "Game Settings" << endl;
+        if (choice == 4)                    
+            cout << "->" ;   
+        else
+            cout << "  ";
+        cout << "Quit Game" << endl;
+        cout << "========================" << endl;
 
-};
+        marker = getch();   
 
-
+        switch (marker) 
+        {
+        case 1:               
+            if (choice <= 1)  
+                choice = 4;   
+            else
+                choice--;
+            break;
+        case 2:           
+            if (choice >= 4)
+                choice = 1;
+            else
+                choice++;    
+            break;
+        case 13:   
+            bool flag = true;
+            switch (choice)
+            {
+            case 1:
+                system("cls");
+                     
+  
+                break;
+            case 2:
+                  
+                
+                break;
+            case 3:
+                system("cls");
+                 
+                break;
+            case 4:
+                system("cls");     
+                exit(0);       
+            }
+            break;
+        }
+        
+    } while (true);  
+}
 int main()
 {
-    
+  menu();    
   return 0;
 }  
