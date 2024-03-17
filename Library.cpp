@@ -33,24 +33,25 @@ void menu()
         if (choice == 1)                   
             cout << "->" ;  
         else
+        
             cout << "  ";
-        cout << "Continue Game" << endl; 
+        cout << "log in or sign up" << endl; 
         if (choice == 2)                    
             cout << "->" ;   
         else
             cout << "  ";
-        cout << "New Game" << endl;
+        cout << "\3" << endl;
         if (choice == 3)                   
             cout << "->" ;  
         else
             cout << "  ";
             
-        cout << "Game Settings" << endl;
+        cout << "Settings" << endl;
         if (choice == 4)                    
             cout << "->" ;   
         else
             cout << "  ";
-        cout << "Quit Game" << endl;
+        cout << "Exit" << endl;
         cout << "========================" << endl;
 
         marker = getch();   
