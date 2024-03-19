@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <ctime>
 #include <fstream>
+#include <cstring>
 using namespace std;
 
 #define UP 72
@@ -96,31 +97,29 @@ class Menu
 
 class Account
 {
-  private:
-  public:
 };
 class Chairman
-{};
-class Book
 {
   private:
-  string bookNo;
-  string bookName;
+  char bookNo1[9];
   public:
-  void List()
+  void take_code()
   {
-    fstream booklist("booklist.txt" , ios::in | ios::out );
-    if(booklist.is_open())
-    {
-      booklist.read((char *) &booklist , sizeof(unsigned int));
-    }
+    cin>>bookNo1;
   }
+  
 };
-class Computer
-{};
+
 class BookList
-{
+{ 
+  private:
+  string bookName;
+  string bookNo;
   public:
+  void Read_list()
+    {
+        ifstream Booklist("booklist.txt" , ios::in | ios::out );
+    }
 };
 class Math_Shelf_Manager
 {};
@@ -137,5 +136,7 @@ int main()
   Menu main_menu;
   main_menu.menu();    
   BookList booklist;
+  Account account;
+  Chairman chairman;
   return 0;
 }  
