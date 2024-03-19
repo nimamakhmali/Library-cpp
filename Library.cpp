@@ -2,15 +2,17 @@
 #include <conio.h>
 #include <ctime>
 #include <fstream>
-#include <cstring>
+#include <Windows.h>
 using namespace std;
 
 #define UP 72
 #define DOWN 80
 
+class Account;
 
 class Menu
 {
+    Account account;
   private:
     unsigned int marker;        
     unsigned int choice = '1';
@@ -32,18 +34,18 @@ class Menu
           else
 
               cout << "  ";
-          cout << " LOG IN TO THE ACCOUNT" << endl; 
+          cout << " LOG IN or SIGN UP" << endl; 
           if (choice == 2)                    
               cout << "->" ;   
           else
               cout << "  ";
-          cout << "3" << endl;
+          cout << " SEARCH..." << endl;
           if (choice == 3)                   
               cout << "->" ;  
           else
               cout << "  ";
               
-          cout << "\5" << endl;
+          cout << " SETTINGS" << endl;
           if (choice == 4)                    
               cout << "->" ;   
           else
@@ -73,9 +75,24 @@ class Menu
               {
               case 1:
                   system("cls");
-                      
-    
-                  break;
+                do{ cout<<"\t\t\t\tMAKHMALI LIBRARY";
+                 cout<<"log in or sign up ? ";
+                 Sleep(10);
+                 char ch; cin>>ch;
+                 if(ch=='l')
+                 {
+                  account.log_in();
+                 }
+                 if(ch=='s')
+                 {
+                  account.sign_up();
+                 }
+                 if(ch=='x')
+                 {
+                    break;
+                 }
+                 }while(true);
+                 break;
               case 2:
                     
                   
@@ -96,7 +113,43 @@ class Menu
 };
 
 class Account
-{
+{ 
+  private:
+    string name;
+    string bookNo;
+    string bookName;
+  public:
+    void log_in()
+     {
+      
+     }
+    void sign_up()
+    {
+      string code;
+
+    cout << "Enter your name: ";
+    cin >> name;
+
+    cout << "Enter your student number: ";
+    cin >> code;
+
+    ofstream file("accounts.txt", ios::app);
+    if (file.is_open())
+    {
+        file << name << " " << code << endl;
+        cout << "Account created successfully!" << endl;
+        file.close();
+    }
+    else
+    {
+        cout << "Unable to open file." << endl;
+    }
+    }
+
+    void accounts()
+    {
+
+    } 
 };
 class Chairman
 {
@@ -136,7 +189,7 @@ int main()
   Menu main_menu;
   main_menu.menu();    
   BookList booklist;
-  Account account;
+ // Account account;
   Chairman chairman;
   return 0;
 }  
