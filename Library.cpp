@@ -26,30 +26,30 @@ class Menu
       do              
       {
           system("cls");
-          cout  << "\t\t\t\t========= Menu ========="  << endl;   
+          cout  << "========= Menu ========="  << endl;   
           if (choice == 1)                   
-              cout << "\t\t\t->" ;  
+              cout << "->" ;  
           else
 
               cout << "  ";
-          cout << "\t\t\t\t\4" << endl; 
+          cout << " LOG IN TO THE ACCOUNT" << endl; 
           if (choice == 2)                    
-              cout << "\t\t\t->" ;   
+              cout << "->" ;   
           else
               cout << "  ";
-          cout << "\t\t\t\t\3" << endl;
+          cout << "3" << endl;
           if (choice == 3)                   
-              cout << "\t\t\t->" ;  
+              cout << "->" ;  
           else
               cout << "  ";
               
-          cout << "\t\t\t\t\5" << endl;
+          cout << "\5" << endl;
           if (choice == 4)                    
-              cout << "\t\t\t->" ;   
+              cout << "->" ;   
           else
               cout << "  ";
-          cout << "\t\t\t\tExit" << endl;
-          cout << "\t\t\t\t========================" << endl;
+          cout << " EXIT" << endl;
+          cout << "========================" << endl;
 
           marker = getch();   
 
