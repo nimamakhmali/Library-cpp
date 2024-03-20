@@ -12,7 +12,7 @@ class Account;
 
 class Menu
 {
-    Account account;
+   Account account;
   private:
     unsigned int marker;        
     unsigned int choice = '1';
@@ -77,7 +77,6 @@ class Menu
                   system("cls");
                 do{ cout<<"\t\t\t\tMAKHMALI LIBRARY";
                  cout<<"log in or sign up ? ";
-                 Sleep(10);
                  char ch; cin>>ch;
                  if(ch=='l')
                  {
@@ -91,6 +90,7 @@ class Menu
                  {
                     break;
                  }
+                  Sleep(10);
                  }while(true);
                  break;
               case 2:
@@ -189,7 +189,7 @@ int main()
   Menu main_menu;
   main_menu.menu();    
   BookList booklist;
- // Account account;
+  Account account;
   Chairman chairman;
   return 0;
 }  
