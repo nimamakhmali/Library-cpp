@@ -8,6 +8,7 @@ using namespace std;
 
 #define UP 72
 #define DOWN 80
+
 Account account;
 
 class Menu
@@ -39,7 +40,7 @@ public:
                 cout << "->";
             else
                 cout << "  ";
-            cout << " SEARCH..." << endl;
+            cout << " IM CHAIRMAN" << endl;
             if (choice == 3)
                 cout << "->";
             else
@@ -173,24 +174,30 @@ public:
 class Chairman
 {
   private:
-  char bookNo1[9];
   public:
-  void take_code()
-  {
-    cin>>bookNo1;
-  }
-  
 };
 
 class BookList
 { 
-  private:
-  string bookName;
-  string bookNo;
-  public:
-  void Read_list()
+private:
+    string bookName;
+    string bookNo;
+public:
+    void Book_list()
     {
-        ifstream Booklist("booklist.txt" , ios::in | ios::out );
+        ofstream file("books.txt");
+        if (file.is_open())
+        {
+            file << "c++ and object oriented programming QA7673C617" << endl;
+            file << "practical object oriented design with uml QA7664P7P72000" << endl;
+            file << "object oriented modeling and design QA7664O3" << endl;
+            file.close();
+            cout << "Book list created successfully!" << endl;
+        }
+        else
+        {
+            cout << "Unable to open the file." << endl;
+        }
     }
 };
 
